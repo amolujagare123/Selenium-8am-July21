@@ -10,7 +10,7 @@ public class SeleniumDemo {
 
         // opening browser - chrome
        // System.setProperty("webdriver.chrome.driver","Drivers/chromedriver.exe");
-    //    WebDriver driver = new ChromeDriver();
+      //    WebDriver driver = new ChromeDriver();
 
       //  System.setProperty("webdriver.opera.driver","Drivers/operadriver.exe");
     //    WebDriver driver = new OperaDriver();
