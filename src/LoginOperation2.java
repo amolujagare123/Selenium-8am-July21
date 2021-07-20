@@ -19,6 +19,10 @@ public class LoginOperation2 {
 
         List<WebElement> elementList = driver.findElements(By.tagName("input"));
 
+        // how to print the total number of elements present
+
+        System.out.println("total elements="+elementList.size());
+
         elementList.get(0).sendKeys("admin"); // username
         elementList.get(1).sendKeys("admin"); // password
         elementList.get(2).click(); // button

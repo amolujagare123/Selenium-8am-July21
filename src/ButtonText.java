@@ -18,10 +18,15 @@ public class ButtonText {
 
         List<WebElement> btnList = driver.findElements(By.className("elementor-button-text"));
 
-        System.out.println(btnList.get(0).getText());
+        System.out.println("total elements="+btnList.size());
+
+    /*    System.out.println(btnList.get(0).getText());
         System.out.println(btnList.get(1).getText());
         System.out.println(btnList.get(2).getText());
         System.out.println(btnList.get(3).getText());
-        System.out.println(btnList.get(4).getText());
+        System.out.println(btnList.get(4).getText());*/
+
+        for(int i=0;i<btnList.size();i++)
+            System.out.println(btnList.get(i).getText());
     }
 }
