@@ -19,7 +19,7 @@ public class SeleniumDemo {
 
       //  System.setProperty("webdriver.gecko.driver","Drivers/geckodriver.exe");
     //    WebDriver driver = new FirefoxDriver();
-
+// C:\Users\amolu\IdeaProjects\Selenium-8am-July21\Drivers\msedgedriver.exe
         System.setProperty("webdriver.edge.driver","Drivers/msedgedriver.exe");
         WebDriver driver = new EdgeDriver();
 
