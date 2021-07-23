@@ -25,7 +25,7 @@ public class LoginOperation {
         WebElement btnName = driver.findElement(By.name("submit"));
         btnName.click();
 
-      /*  WebElement lnkAddSupplier = driver.findElement(By.linkText("Add Supplier"));
+      /* WebElement lnkAddSupplier = driver.findElement(By.linkText("Add Supplier"));
         lnkAddSupplier.click();
 */
         WebElement lnkAddSupplier = driver.findElement(By.partialLinkText("Add Sup"));
