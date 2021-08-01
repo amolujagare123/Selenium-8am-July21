@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DynamicXpath3 {
+public class EditClientXpath {
 
+    public static void main(String[] args) throws InterruptedException {
 
-    public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -22,20 +22,16 @@ public class DynamicXpath3 {
         WebElement txtPassword = driver.findElement(By.xpath("//input[@id='password']"));
         txtPassword.sendKeys("admin123");
 
-        WebElement btnName = driver.findElement(By.xpath("//input[@name='btn_login']"));
-        btnName.click();
 
-        WebElement lnkAddClient = driver.findElement(By.xpath("//span[normalize-space()='Clients']"));
-        lnkAddClient.click();
+        driver.findElement(By.xpath("//input[@name='btn_login']")).click();
 
-        WebElement viewClients = driver.findElement(By.xpath("//a[normalize-space()='View Clients']"));
-        viewClients.click();
+        driver.findElement(By.xpath("//a[@class='dropdown-toggle']")).click();
+        driver.findElement(By.xpath("//a[text()='View Clients']")).click();
 
+        driver.findElement(By.xpath("//tr[td/a[text()='Ajay Mathur']]//a[@data-toggle='dropdown']")).click();
 
-        String name="Ajay Singh";
-        driver.findElement(By.xpath("//tr[td/a[text()='"+name+"']]//div")).click();
-        driver.findElement(By.xpath("//tr[td/a[text()='"+name+"']]//i[contains(@class,'edit')]")).click();
+        Thread.sleep(2000);
 
-
+        driver.findElement(By.xpath("//a[@href='https://billing.scriptinglogic.net/index.php/clients/form/381']")).click();
     }
 }
