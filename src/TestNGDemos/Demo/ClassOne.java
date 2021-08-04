@@ -19,11 +19,13 @@ public class ClassOne {
 
 
 
-
+    @Parameters({"user","password"})
     @Test
-    public void classONeTest1()
+    public void classONeTest1(String s1,String s2)
     {
         System.out.println("classONeTest1");
+        System.out.println("user="+s1);
+        System.out.println("Pass="+s2);
     }
 
     @Test //(enabled = false)
