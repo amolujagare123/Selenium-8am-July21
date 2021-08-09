@@ -16,7 +16,7 @@
 
     <test name = "module 2 tests">
         <classes>
-                      <class name = "TestNGDemos.Demo.ClassThree"/>
+               <class name = "TestNGDemos.Demo.ClassThree"/>
         </classes>
     </test>
 

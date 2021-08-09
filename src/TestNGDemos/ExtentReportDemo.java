@@ -8,9 +8,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
+
+import static TestNGDemos.Screenshot.ScreenshotCode.takescreenshot;
 
 public class ExtentReportDemo {
 
@@ -43,8 +48,7 @@ public class ExtentReportDemo {
 
 
     @Test
-    public void  loginTest()
-    {
+    public void  loginTest() throws IOException {
         ExtentTest test = extent.createTest("valid loginTest");
 
 
@@ -73,12 +77,23 @@ public class ExtentReportDemo {
 
         test.info("login button is clicked");
 
+        String expected = "https://stock.scriptinglogic.net/dashboard.php1";
+        String actual = driver.getCurrentUrl();
+
+        try {
+            Assert.assertEquals(actual,expected,"wrong page");
+            test.pass("this is a dashboard : test is passed");
+        }
+        catch (AssertionError e)
+        {
+            test.fail(e.getMessage());
+            test.addScreenCaptureFromPath("./screenshots/"+takescreenshot(driver));
+        }
 
     }
 
     @Test
-    public void  loginTest1()
-    {
+    public void  loginTest1() throws IOException {
         ExtentTest test = extent.createTest("invalid loginTest");
 
 
@@ -107,12 +122,21 @@ public class ExtentReportDemo {
 
         test.info("login button is clicked");
 
-
+        String expected = "https://stock.scriptinglogic.net/index.php?msg=Wrong%20Username%20or%20Password&type=error";
+        String actual = driver.getCurrentUrl();
+        try {
+            Assert.assertEquals(actual,expected,"wrong page");
+            test.pass("this is a login page : test is passed");
+        }
+        catch (AssertionError e)
+        {
+            test.fail(e.getMessage());
+            test.addScreenCaptureFromPath("./screenshots/"+takescreenshot(driver));
+        }
     }
 
     @Test
-    public void  loginTest2()
-    {
+    public void  loginTest2() throws IOException {
         ExtentTest test = extent.createTest("blank loginTest");
 
 
@@ -122,7 +146,7 @@ public class ExtentReportDemo {
         test.info("browser is opened");
 
         driver.manage().window().maximize();
-        driver.get("https://stock.scriptinglogic.net/");
+        driver.get("https://stock.scriptinglogic.net");
 
         test.info("URL is opened");
 
@@ -141,6 +165,17 @@ public class ExtentReportDemo {
 
         test.info("login button is clicked");
 
+        String expected = "https://stock.scriptinglogic.net/";
+        String actual = driver.getCurrentUrl();
+        try {
+            Assert.assertEquals(actual,expected,"wrong page");
+            test.pass("this is a login page : test is passed");
+        }
+        catch (AssertionError e)
+        {
+            test.fail(e.getMessage());
+            test.addScreenCaptureFromPath("./screenshots/"+takescreenshot(driver));
+        }
 
     }
 

@@ -1,22 +1,13 @@
-package TestNGDemos;
+package TestNGDemos.sites;
 
+import TestNGDemos.sites.util.Initialize;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
-public class SocialSites {
-
-    WebDriver driver;
-
-    @BeforeClass
-    public void openUrl()
-    {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
+public class SocialSites extends Initialize {
 
     @AfterClass
     public void closeBrowser() throws InterruptedException {

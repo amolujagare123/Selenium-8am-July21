@@ -3,15 +3,15 @@
     <test name = "study sites">
 
         <classes>
-            <class name = "TestNGDemos.TutorialsSite"/>
-            <class name = "TestNGDemos.Jobsites"/>
+            <class name = "TestNGDemos.sites.TutorialsSite"/>
+            <class name = "TestNGDemos.sites.Jobsites"/>
         </classes>
     </test>
 
     <test name = "socail sites">
 
         <classes>
-            <class name = "TestNGDemos.SocialSites"/>
+            <class name = "TestNGDemos.sites.SocialSites"/>
 
         </classes>
     </test>

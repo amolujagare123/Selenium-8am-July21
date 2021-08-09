@@ -4,8 +4,7 @@
         <listener class-name="org.testng.reporters.EmailableReporter2" />
     </listeners>-->
     <listeners>
-        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="TestNGDemos.ForListners.MyListnerExtentReports"/>
     </listeners>
 
     <test name = "study sites">
